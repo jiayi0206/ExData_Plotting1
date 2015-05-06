@@ -12,7 +12,7 @@ data <- read.csv("household_power_consumption.txt",
                  na.strings = "?",
                  header=F,
                  sep=";")
-names(data) <- names(read.csv("household_power_consumption.txt", nrows=1,sep=";"))
+
 names(data) <- names(read.csv("household_power_consumption.txt", nrows=1,sep=";"))
 data$DateTime <- as.POSIXct(paste(data$Date, data$Time, sep=" "), 
                             format="%d/%m/%Y %H:%M:%S")
