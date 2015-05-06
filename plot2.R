@@ -14,11 +14,11 @@ data <- read.csv("household_power_consumption.txt",
                  sep=";")
 
 names(data) <- names(read.csv("household_power_consumption.txt", nrows=1,sep=";"))
-data$DateTime <- as.POSIXct(paste(data$Date, data$Time, sep=" "), 
+data$datetime <- as.POSIXct(paste(data$Date, data$Time, sep=" "), 
                             format="%d/%m/%Y %H:%M:%S")
 
 png(filename="plot2.png", width=480, height=480)
-plot(data$DateTime, 
+plot(data$datetime, 
      data$Global_active_power, 
      type="l",
      col="black", 
